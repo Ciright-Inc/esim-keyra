@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# KEYRA eSIM — esim.keyra.ie
 
-## Getting Started
+Telecom-grade, enterprise-class eSIM and trusted connectivity platform under the KEYRA brand.
 
-First, run the development server:
+**Tagline:** Trusted Connectivity for the AI Era.
+
+## Stack
+
+- Next.js 16 (App Router)
+- TypeScript
+- Tailwind CSS v4
+- Framer Motion
+
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3040](http://localhost:3040).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Optional standalone API:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run api:dev
+# http://localhost:4040/health
+```
 
-## Learn More
+## Build & deploy
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Set environment variables from `.env.example`. Point `NEXT_PUBLIC_SITE_URL` to `https://esim.keyra.ie`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Railway (Keyra-Projects)
 
-## Deploy on Vercel
+Repo: [github.com/Ciright-Inc/esim-keyra](https://github.com/Ciright-Inc/esim-keyra)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+See **[RAILWAY.md](./RAILWAY.md)** — connect Git, use `${{ Postgres.DATABASE_URL }}` from the Keyra Postgres plugin, custom domain `esim.keyra.ie`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Structure
+
+| Path | Purpose |
+|------|---------|
+| `src/components/sections/` | Homepage narrative sections (1–10) |
+| `src/app/api/v1/` | Placeholder telecom APIs |
+| `src/lib/cms/` | CMS-ready types and module list |
+| `src/styles/keyra-esim-theme.css` | KEYRA eSIM design tokens |
+
+## Pages
+
+- `/` — Marketing homepage
+- `/activate` — Activation wizard (QR flow placeholder)
+- `/enterprise` — Enterprise request form
+- `/developers` — Docs + live API explorer
+- `/login` — KEYRA auth placeholders
+- `/admin` — CMS console (10 modules)
+
+## APIs (placeholders)
+
+- `GET /api/v1/carriers`
+- `GET /api/v1/coverage`
+- `GET /api/v1/plans`
+- `POST /api/v1/provisioning`
+- `GET /api/v1/analytics`
+- `GET /api/v1/inventory` · `GET /api/v1/fraud`
+- `POST /api/v1/graphql` · `GET|POST /api/v1/webhooks`
+- `POST /api/v1/carriers/onboarding`
+- `GET /api/v1/admin/modules` · `GET /api/v1/audit` · `GET /api/v1/support/tickets`
+- `backend/` — Express modular API (port 4040)
+
+See **COMPLETION.md** for full specification checklist.
+
+## Brand
+
+Aligned with KEYRA Trust Layer doctrine — sovereign, institutional, identity-centric. No cloned assets from third-party sites.

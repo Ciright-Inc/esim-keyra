@@ -1,0 +1,53 @@
+:root {
+  --color-primary: #000000;
+  --color-primary-active: #1a1a1a;
+  --color-text-link: #0d74ce;
+  --color-canvas: #ffffff;
+  --color-canvas-soft: #fafafa;
+  --color-surface-strong: #f0f0f3;
+  --color-surface-dark: #171717;
+  --color-hairline: #f0f0f3;
+  --color-ink: #171717;
+  --color-body: #60646c;
+  --color-on-dark: #ffffff;
+
+  --keyra-bg: var(--color-canvas);
+  --keyra-surface: var(--color-canvas-soft);
+  --keyra-surface-2: var(--color-surface-strong);
+  --keyra-text: var(--color-ink);
+  --keyra-text-secondary: var(--color-body);
+  --keyra-primary: var(--color-ink);
+  --keyra-accent: var(--color-primary);
+  --keyra-accent-2: var(--color-primary-active);
+  --keyra-action: rgba(0, 0, 0, 0.07);
+  --keyra-action-border: rgba(0, 0, 0, 0.2);
+  --keyra-action-text: var(--keyra-text);
+  --keyra-border: var(--color-hairline);
+  --keyra-ring: rgba(0, 0, 0, 0.22);
+  --keyra-shadow-card: 0 4px 12px rgba(0, 0, 0, 0.04);
+  --keyra-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.04);
+  --keyra-radius-pill: 9999px;
+  --keyra-radius-sheet: 16px;
+  --keyra-text-base: 1rem;
+  --keyra-leading-body: 1.5;
+  --keyra-header-offset: 4rem;
+  --keyra-z-header: 200;
+  --keyra-z-overlay: 250;
+  --ds-shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.keyra-site-header-shell {
+  position: sticky;
+  top: 0;
+  min-height: 3.5rem;
+  border-bottom: 1px solid var(--color-hairline);
+  background: var(--keyra-bg);
+  z-index: var(--keyra-z-header);
+  isolation: isolate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .keyra-site-header-shell {
+    background: var(--keyra-bg);
+  }
+}

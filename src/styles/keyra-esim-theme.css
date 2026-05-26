@@ -1,0 +1,87 @@
+/*
+ * KEYRA eSIM — Trust Layer tokens (esim.keyra.ie)
+ * Matte black / graphite / sovereign blue accents / emerald verification
+ */
+
+:root {
+  --esim-bg: #fafafa;
+  --esim-surface: #ffffff;
+  --esim-surface-elevated: #f4f4f5;
+  --esim-text: #0a0a0b;
+  --esim-text-secondary: rgba(10, 10, 11, 0.62);
+  --esim-border: rgba(10, 10, 11, 0.08);
+  --esim-accent: #3b82f6;
+  --esim-accent-glow: rgba(59, 130, 246, 0.35);
+  --esim-verify: #10b981;
+  --esim-verify-glow: rgba(16, 185, 129, 0.3);
+  --esim-glass: rgba(255, 255, 255, 0.72);
+  --esim-grid: rgba(10, 10, 11, 0.04);
+  --keyra-motion-fg: 300ms;
+  --keyra-motion-mg: 500ms;
+  --keyra-motion-bg: 700ms;
+}
+
+[data-theme="dark"] {
+  --esim-bg: #0a0a0b;
+  --esim-surface: #111113;
+  --esim-surface-elevated: #18181b;
+  --esim-text: #fafafa;
+  --esim-text-secondary: rgba(250, 250, 250, 0.65);
+  --esim-border: rgba(255, 255, 255, 0.08);
+  --esim-accent: #60a5fa;
+  --esim-accent-glow: rgba(96, 165, 250, 0.25);
+  --esim-verify: #34d399;
+  --esim-verify-glow: rgba(52, 211, 153, 0.22);
+  --esim-glass: rgba(17, 17, 19, 0.75);
+  --esim-grid: rgba(255, 255, 255, 0.04);
+}
+
+.esim-telecom-grid {
+  background-image:
+    linear-gradient(var(--esim-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--esim-grid) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 20%, transparent 75%);
+}
+
+.esim-glass-panel {
+  background: var(--esim-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--esim-border);
+}
+
+.esim-glow-hover {
+  transition: box-shadow var(--keyra-motion-fg) cubic-bezier(0.22, 1, 0.36, 1),
+    border-color var(--keyra-motion-fg) cubic-bezier(0.22, 1, 0.36, 1);
+}
+.esim-glow-hover:hover {
+  box-shadow: 0 0 0 1px var(--esim-border), 0 20px 50px -12px var(--esim-accent-glow);
+  border-color: color-mix(in srgb, var(--esim-accent) 35%, var(--esim-border));
+}
+
+.esim-display {
+  font-family: var(--font-inter, "Inter"), -apple-system, BlinkMacSystemFont,
+    "SF Pro Display", "Helvetica Neue", system-ui, sans-serif;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.esim-eyebrow {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--esim-text-secondary);
+}
+
+.esim-prose {
+  color: var(--esim-text-secondary);
+  line-height: 1.65;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .esim-glow-hover {
+    transition: none;
+  }
+}
