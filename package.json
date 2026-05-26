@@ -2,12 +2,16 @@
   "name": "esim-keyra",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
     "dev": "next dev --webpack -p 3040",
     "build": "next build --webpack",
     "start": "next start -H 0.0.0.0 -p ${PORT:-3040}",
     "lint": "eslint",
-    "api:dev": "npm run dev --prefix backend"
+    "api:dev": "npm run dev --prefix backend",
+    "deploy:railway": "bash scripts/railway-deploy.sh"
   },
   "dependencies": {
     "clsx": "^2.1.1",
