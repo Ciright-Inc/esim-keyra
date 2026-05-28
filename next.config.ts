@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import path from "node:path";
 
 const nextConfig: NextConfig = {
   images: {
@@ -12,6 +13,15 @@ const nextConfig: NextConfig = {
   },
   turbopack: {
     root: process.cwd(),
+  },
+  webpack: (config) => {
+    // Hard guarantee `@/*` resolves to `src/*` in all build environments.
+    config.resolve = config.resolve ?? {};
+    config.resolve.alias = {
+      ...(config.resolve.alias ?? {}),
+      "@": path.resolve(process.cwd(), "src"),
+    };
+    return config;
   },
 };
 
