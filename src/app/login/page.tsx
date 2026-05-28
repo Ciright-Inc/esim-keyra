@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { AuthProviderButtons } from "@/components/auth/AuthProviderButtons";
+import { LoginReturnRefresh } from "@/components/auth/LoginReturnRefresh";
 import { PageShell } from "@/components/ui/PageShell";
 
 export const metadata: Metadata = {
@@ -14,6 +15,7 @@ export default function LoginPage() {
       title="Sign in"
       description="Authenticate users, devices, and enterprise sessions before eSIM provisioning."
     >
+      <LoginReturnRefresh />
       <div className="mx-auto max-w-md">
         <AuthProviderButtons />
       </div>
